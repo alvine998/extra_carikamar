@@ -60,7 +60,10 @@ function Copyright() {
   const Register = () => {
     const classes = useStyles();
 
-    const [name, email, password, password2, setName, setEmail, setPassword, setPassword2] = useState("");
+    const [name, setName ] = useState("");
+    const [ email, setEmail] = useState("");
+    const [ password, setPassword] = useState("");
+    const [ password2, setPassword2] = useState("");
 
   //   useEffect( () => {
       
@@ -87,7 +90,7 @@ function Copyright() {
                     required
                     fullWidth
                     value={name}
-                    // onChange={e => setName(e.target.value)}
+                    onChange={e => setName(e.target.value)}
                     id="firstName"
                     label="Nama Lengkap"
                     autoFocus
@@ -99,7 +102,7 @@ function Copyright() {
                     required
                     fullWidth
                     value={email}
-                    // onChange={e => setEmail(e.target.value)}
+                    onChange={e => setEmail(e.target.value)}
                     id="email"
                     label="Alamat Email"
                     name="email"
@@ -112,7 +115,7 @@ function Copyright() {
                     required
                     fullWidth
                     alue={password}
-                    // onChange={e => setPassword(e.target.value)}
+                    onChange={e => setPassword(e.target.value)}
                     name="password"
                     label="Password"
                     type="password"
@@ -126,7 +129,7 @@ function Copyright() {
                     required
                     fullWidth
                     alue={password2}
-                    // onChange={e => setPassword2(e.target.value)}
+                    onChange={e => setPassword2(e.target.value)}
                     name="password2"
                     label="Ulangi Password"
                     type="password"

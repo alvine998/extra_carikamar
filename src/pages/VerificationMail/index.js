@@ -55,7 +55,7 @@ const VerificationMail = () => {
 					<form action="/reset-password" className={classes.form} noValidate>
 						<Timer />
 						<Button type="submit" fullWidth variant="contained" color="primary" className={classes.submit}>
-							Kirim Ulang
+							Kirim
 						</Button>
 						<Link href="/verification-phone" variant="body2">
 							Gunakan cara lain

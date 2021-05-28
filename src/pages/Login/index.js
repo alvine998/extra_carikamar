@@ -67,7 +67,8 @@ const Login = () => {
 	}));
 
 	const classes = useStyles();
-	const [email, password, setEmail, setPassword] = useState("");
+	const [email, setEmail] = useState("");
+	const [password, setPassword] = useState("");
 
 	return (
 		<Fragment>

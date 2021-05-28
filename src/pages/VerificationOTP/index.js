@@ -17,6 +17,8 @@ import { makeStyles } from '@material-ui/core/styles';
 import { InputAdornment } from '@material-ui/core';
 import Autocomplete from '@material-ui/lab/Autocomplete';
 
+// import firebase from './firebase';
+
 const VerificationOTP = () => {
 	const [ showPass, setShowPass ] = useState(false);
 	const togglePassVisibility = () => {
@@ -67,7 +69,8 @@ const VerificationOTP = () => {
 	}));
 
 	const classes = useStyles();
-	const [ email, password, setEmail, setPassword ] = useState('');
+	const [ phone, setPhone ] = useState('');
+	const [ otp, setOtp ] = useState('');
 	const codeNation = [
 		{ code: '+62' },
 		{ code: '+63' },
@@ -76,6 +79,22 @@ const VerificationOTP = () => {
 		{ code: '+55' },
 		{ code: '+53' }
 	];
+
+	// const handleClick = () => {
+	// 	let recaptcha = new firebase.auth.RecaptchaVerifier('recaptcha');
+	// 	let number = '+6281294262257';
+	// 	firebase.auth().signInWithPhoneNumber(number, recaptcha).then(function(e){
+	// 		let code = prompt('enter the otp', '');
+	// 		if(code == null) return;
+	// 		e.confirm(code).then(function(result){
+	// 			console.log(result.user,'user');
+	// 			document.querySelector('label').textContent= result.user.phoneNumber + "Number Verified";
+
+	// 		}).catch((err) => {
+	// 			console.log(err)
+	// 		})
+	// 	})
+	// };
 
 	return (
 		<Fragment>
@@ -104,16 +123,17 @@ const VerificationOTP = () => {
 								margin="normal"
                                 required
                                 fullWidth
-								// value={email}
-								// onChange={e => setEmail(e.target.value)}
+								onChange={e => setPhone(e.target.value)}
 								id="phone"
+								value={phone}
 								label="No Ponsel"
 								name="phone"
 								autoComplete="phone"
 								autoFocus
 							/>
 							<Button
-								type="submit"
+								type="button"
+								// onClick={handleClick}
 								fullWidth
 								variant="contained"
 								color="primary"
@@ -129,8 +149,8 @@ const VerificationOTP = () => {
 								required
 								fullWidth
 								style={{ width: 200 }}
-								// value={password}
-								// onChange={e => setPassword(e.target.value)}
+								value={otp}
+								onChange={e => setOtp(e.target.value)}
 								name="otp"
 								label="Kode OTP"
 								type="numeric"

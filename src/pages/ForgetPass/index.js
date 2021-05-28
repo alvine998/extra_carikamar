@@ -1,6 +1,6 @@
 import CssBaseline from '@material-ui/core/CssBaseline';
 import Container from '@material-ui/core/Container';
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import logo from '../../assets/images/carikamar/Biru_Full_Vertikal.png';
 import mail from '../../assets/images/mail.jpg';
 import TextField from '@material-ui/core/TextField';
@@ -40,6 +40,7 @@ const useStyles = makeStyles((theme) => ({
 
 const ForgetPass = () => {
 	const classes = useStyles();
+	const [email, setMail] = useState("");
 
 	return (
 		<Container component="main" maxWidth="xs">
@@ -56,7 +57,8 @@ const ForgetPass = () => {
 							variant="outlined"
 							required
 							fullWidth
-							// onChange={e => setName(e.target.value)}
+							value={email}
+							onChange={e => setMail(e.target.value)}
 							id="email"
 							label="Email"
 							autoFocus
